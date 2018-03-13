@@ -1,5 +1,5 @@
 package com.theironyard;
-import java.util*;
+import java.util.*;
 
 public class DotComBust {
 
