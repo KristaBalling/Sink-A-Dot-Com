@@ -7,7 +7,7 @@ public class DotComBust {
     private ArrayList<DotCom> dotComsList = new ArrayList<DotCom>();
     private int numOfGuesses = 0;
 
-    private void setUpGame() {
+    public void setUpGame() {
         //first make some dot coms and give them locations
         //make three DotCom objects, give 'em names, and stick 'em in the ArrayList
         DotCom one = new DotCom();
@@ -33,18 +33,18 @@ public class DotComBust {
 
             //Call the setter method on this DotCom to
             // give it the location you just got from the helper.
-            dotComtoSet.setLocationCells(newLocation);
+            dotComToSet.setLocationCells(newLocation);
 
         } //close for loop
     }//close setUpGame method
 
-    private void startPlaying() {
+    public void startPlaying() {
         //as long as the DotCom list in NOT empty (the ! means not)
         //it's the same as (dotComsList.isEmpty == false).
         while(!dotComsList.isEmpty()) {
 
             //get user input
-            String userguess = helper.getUserInput("Enter a guess");
+            String userGuess = helper.getUserInput("Enter a guess");
             checkUserGuess(userGuess); //call our own checkUserGuess method
         }//close while
 
