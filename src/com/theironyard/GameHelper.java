@@ -27,7 +27,7 @@ public class GameHelper {
         ArrayList<String> alphaCells = new ArrayList<String>();
         //holds 'f6' type coords
         String temp = null;              //temporary String for concat
-        int[] coords = new int[comSize]; //current candidate coords
+        int [] coords = new int[comSize]; //current candidate coords
         int attempts = 0;                //current attempts counter
         boolean success = false;         //flag = found a good location ?
         int location = 0;                //current starting location
@@ -38,9 +38,9 @@ public class GameHelper {
             incr = gridLength;           //set vertical increment
         }
 
-        while (!success & attempts++ < 200) { //main search loop (32)
+        while ( !success & attempts++ < 200 ) { //main search loop (32)
             location = (int) (Math.random() * gridSize); //get random starting point
-            //System.out.print( " try " + location);    //uncomment this to cheat/test
+//            System.out.print( " try " + location);    //uncomment this to cheat/test
             int x = 0;                  //nth position in dotcom to place
             success = true;             //assume success
             while (success && x < comSize) { //look for adjacent unused spots
@@ -50,15 +50,15 @@ public class GameHelper {
                     if (location >= gridSize) { //out of bounds - 'bottom'
                         success = false;      //failure
                     }
-                    if (x > 0 && (location % gridLength == 0)) { //out of bounds - right edge
-                        success = false;     //failure
-                    } else {                 //found already used location
+                    if (x>0 && (location % gridLength == 0)) { //out of bounds - right edge
+                        success = false;
+                    }//failure
+                } else {                 //found already used location
                         //System.out.print(" used " + location);
                         success = false;     //failure
                     }
                 }
-            }
-        }//end while
+            }//end while
 
         int x = 0;
         int row = 0;
@@ -72,7 +72,7 @@ public class GameHelper {
 
             alphaCells.add(temp.concat(Integer.toString(row)));
             x++;
-            //System.out.print("  coord "+x+" = " + alphaCells.get(x-1));
+            System.out.print("  coord "+x+" = " + alphaCells.get(x-1));
             //tells you exactly where the DotCom is located
         }
 
