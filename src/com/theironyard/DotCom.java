@@ -1,5 +1,6 @@
 package com.theironyard;
 import java.util.*;
+import java.util.ArrayList;
 
 public class DotCom { //DotCom's instance variables
     private ArrayList<String> locationCells; //an ArrayList of cell locations
